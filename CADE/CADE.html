@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          
+          
+            body {
+                background-image: url("serieswallpaper.jpg");
+                background-size: 2160px;
+                background-position: center;
+             
+            }
+
+        .about-us-link {
+                        color: white;
+                        font-family: Arial, sans-serif;
+                        text-decoration: none;
+}
+
+
+            header {
+                  
+                  color: #FFFFFF;
+                  padding: 10px;
+                  width: 100%;
+                  padding-top: 10px 0;
+                  position: absolute;
+                  text-align: center;
+                  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+                }              
+                
+
+            #search-container {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #search-input {
+                border: none;
+                outline: none;
+                padding: 10px;
+                width: 150%;
+                align-items: center;
+                justify-content: center;
+            }
+            #search-btn {
+                background-color: purple;
+                color: white;
+                padding: 10px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                
+        
+
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Cadê</h1>
+            <a href="about.html" class="about-us-link">Qual a função do CADÊ?</a>
+            </header>
+
+      
+<div id="search-container">
+
+    <input type="text" id="search-input" placeholder="Nome da série ou filme" value="Where is ">
+    <button id="search-btn">Search</button>
+    
+    <script>
+      var searchBtn = document.getElementById("search-btn");
+      var searchInput = document.getElementById("search-input");
+    
+      searchBtn.addEventListener("click", function(){
+        var input = searchInput.value.slice(8); // slice the value to remove "Where is "
+        var searchUrl = "https://www.google.com/search?q=Qual streaming+" + input + "+está disponível";
+        window.location.href = searchUrl;
+      });
+    
+      searchInput.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) { // activate the search with the "Enter" key
+            searchBtn.click();
+        }
+      });
+    </script>
+    
+    </body>
+</html>

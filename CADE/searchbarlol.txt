@@ -1,0 +1,46 @@
+<form id="search-form">
+  <input type="text" id="search-input">
+  <input type="submit" value="Search">
+</form>
+<script>
+  // Get the form and input elements
+  var form = document.getElementById("search-form");
+  var input = document.getElementById("search-input");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // prevent the form from submitting
+
+    // Get the search query
+    var query = input.value;
+
+    // Array of website URLs
+    var websites = ["https://www.amazon.com/s", "https://www.netflix.com/search", "https://www.google.com/search"];
+
+    // Loop through the websites array
+    for (var i = 0; i < websites.length; i++) {
+      // Search the current website
+      var results = searchWebsite(websites[i], query);
+
+      // Check if the item was found on the current website
+      if (results.length > 0) {
+        // Item was found on the current website
+        displayResults(results);
+        break;
+      }
+    }
+
+    // If the loop completes and no results were found
+    if (results.length === 0) {
+      alert("Sorry, we couldn't find the item on our checklist of websites.")
+    }
+  });
+
+  function searchWebsite(url, query) {
+    // Make an API call to the website's search endpoint
+    // and return the results
+  }
+
+  function displayResults(results) {
+    // Display the results on the page
+  }
+</script>
